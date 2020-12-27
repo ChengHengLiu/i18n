@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+
+<div id="text">
+    {text}
+</div>
+<select name="ln" id="ln">
+    {options}
+</select>
+
+<script>
+    const selectDOM = document.getElementById('ln');
+    const onSelectChange = () => {
+        const value = selectDOM.value
+        const url = `http://localhost:4200/i18n/server?ln=${value}`
+        window.location.replace(url);
+    };
+    selectDOM.addEventListener('change', onSelectChange);
+</script>
